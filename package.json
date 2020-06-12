@@ -1,0 +1,56 @@
+{
+  "name": "@sufang/mysql-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/mysql.js",
+  "scripts": {
+    "test": "NODE_ENV=development jest",
+    "lint": "eslint . --fix --format codeframe",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix --format codeframe",
+      "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "notify": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "roots": [
+      "<rootDir>/__tests__"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/(fixtures|__mocks__)/"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "text-summary"
+    ]
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "gitlab http url"
+  },
+  "author": "yaodong <wangyaodong0126@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^1.6.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^7.1.2",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2"
+  }
+}
